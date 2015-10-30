@@ -1,5 +1,5 @@
 # LIME Protocol specification
-This project refers only to the LIME Protocol specification website.
+This project refers only to the [LIME Protocol specification website](http://limeprotocol.org).
 
 For the implementation, please check the specific project sites:
 * [C#] [0]
