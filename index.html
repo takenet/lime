@@ -125,43 +125,42 @@
                     <p>A message provides the transport of a content between nodes in a network.</p>
                     <p>JSON Schema:</p>
                     <pre>
-    <code class="json-schema">
-    <span>
-    <span class="json-punctuation">{</span>
-    <span class="json-keyword">"$schema"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">http://json-schema.org/draft-04/schema#</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"title"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">message</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"from"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"to"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"pp"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"id"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"metadata"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"type"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^[-\w]+/[-\w.]+(\+\w+)?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"content"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-    <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">type</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> <span class="json-punctuation">"</span><span class="json-string">content</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"additionalProperties"</span><span class="json-punctuation">:</span><span> <span class="json-false">false</span></span>
-<span class="json-punctuation">}</span></span>
+<code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "message",
+    "type": "object",
+    "properties": {
+        "from": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "to": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "pp": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "id" : {
+            "type": "string",
+            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+        },
+        "metadata": {
+            "type": "object"
+        },
+        "type" : {
+            "type": "string",
+            "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+        },
+        "content" : {
+            "type": "object"
+        },
+    },
+    "required": [ "type", "content" ],
+    "additionalProperties": false
+}
 </code>
 </pre>
                     <p>In a message, the following constraints should apply to the envelope properties:</p>
@@ -189,7 +188,7 @@
                             This property is used by the destination to handle the content in the appropriate way. 
                             The MIME can be any discrete type (text, application, image, video or audio; composite types, like message or multipart, are not supported). 
                             For structured data, is recommended to use JSON subtypes (like <em>application/json</em> or <em>application/vnd.specific+json</em>), althought is possible to send other types, like XML, provided that the unsupported characters in content are escaped, accordinally to the JSON specification.
-                            The protocol defines some <a href="content-types.html">common types</a> that should be reused. 
+                            The protocol defines some <a href="@Url.Action("ContentTypes")">common types</a> that should be reused. 
                             If you are using a custom content type, consider <a href="http://www.iana.org/cgi-bin/mediatypes.pl">registering it</a> with IANA in order to provide interoperability.
                         </li>
                         <li>
@@ -200,97 +199,101 @@
                     </ul>
                     <p class="lead">Examples</p>
                     <p><em>Fire-and-forget</em> (no id) text message:</p>
-                    <pre><code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">skyler@breakingbad.com/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"to"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">ww@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">text/plain</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"content"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">Walter, are you in danger?</span><span class="json-punctuation">"</span>    
-<span class="json-punctuation">}</span>
+                    <pre>
+<code class="json">
+{
+    "from": "skyler@breakingbad.com/bedroom",
+    "to": "ww@breakingbad.com",
+    "type": "text/plain",
+    "content": "Walter, are you in danger?"    
+}
 </code>
 </pre>
                     <p>JSON text message with metadata and notification support, omitting the destination domain:</p>
-                    <pre><code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">48600604-ce09-479c-b985-1195b196fe8e</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">heisenberg@breakingbad.com/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"to"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">skyler/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">application/vnd.lime.threadedtext+json</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"content"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"text"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">I am the one who knocks!</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"thread"</span><span class="json-punctuation">:</span> <span class="json-number">2</span>
-    <span class="json-punctuation">}</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"metadata"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"senderIp"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">192.168.0.1</span><span class="json-punctuation">"</span>
-    <span class="json-punctuation">}</span>
-<span class="json-punctuation">}</span>
+                    <pre>
+<code class="json">
+{
+    "id": "48600604-ce09-479c-b985-1195b196fe8e",
+    "from": "heisenberg@breakingbad.com/bedroom",
+    "to": "skyler/bedroom",
+    "type": "application/vnd.lime.threadedtext+json",
+    "content": {
+        "text": "I am the one who knocks!",
+        "thread": 2
+    },
+    "metadata": {
+        "senderIp": "192.168.0.1"
+    }
+}
 </code>
 </pre>
                     <p>Binary text message with notification support:</p>
-                    <pre><code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">65603604-fe19-479c-c885-3195b196fe8e</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>   
-    <span class="json-object-key">"to"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">heisenberg@breakingbad.com/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">image/png</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"content"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAMAAAAd31JXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEYyQzgwNTUxQkY2MTFFMkE2NzBBRjFERkI1MEFCQjUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEYyQzgwNTYxQkY2MTFFMkE2NzBBRjFERkI1MEFCQjUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowRjJDODA1MzFCRjYxMUUyQTY3MEFGMURGQjUwQUJCNSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowRjJDODA1NDFCRjYxMUUyQTY3MEFGMURGQjUwQUJCNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnkDBYEAAADAUExURcbhnr/flKbTaZPJSrPZfprMVKzWdMzlqcXinpTKS9jsvt7vyKDPX7ncieLxz9Los5vMVtTqt/j788bin6/Wec/lruby1dvswtXouJDIRfH459Lns+v13eDvy+r02+7246zUc6LRY6nTbev13t3txuXy05TJS73cj5vNV7HYe6LPYrjbh7bZhJ7OXL/fk7naiZfLUKrUb6XRZ9vtw+nz2uPw0LPXfsnipM3mq9jqvcDdk8zkqbzcjvH46P///43GP1/s3CQAAALWSURBVHjajJXpmqowDIYtlB1kVQE3wH0ddfalJ/d/V6fQAtUZz5n8kMfyJv2aJqHz5/fW+b4UdKkF/2UDf7cGOHmeB/nRv3UQ2XQHp2z/0RtQiz8fskOS+z+z6SbZrt6fCLOFRWbz4cth7f/A+kbRGRPiYmRBZYpFyGzw4eWTW9Y/rcbEkkpIZywgXdJH0zgzJtfsY7J6Ihpj+AM0hQbXyDiqYcamxv6JuHU8WfRRzHFmpAKbZ1QARwBL7KHW8eND3rJv3pCQ+hVIjDXr/9DtJGHNBsbD1NQaVkaVh9awznNhBJw9egMqQHKlWkR9stqZ9JYhZ2lYiSVJblgFQWvWbF8GpuzjMuYpUFjo8kdAJcsksedX7LHoN1qxzji5WVEdLIM2izYVm+/bHICtUeUyqJUaGevIrtSRjlGx8EmEHWVs06SVkm0OljLIEBjbE1mqw0KOAoqO2yWFvEOXsl3KjhAyTVNDSDN1ZNKSxKoqusOi17AES6XxF5S14NrMTqWhZB1x3RkRotHjS2KGv7jeLyKsSrriuIsyDQrGTn04sufsS8sqLq1IVZHrw9oqKtOnkmhdseuiX2+numUVUEW4rQbV1fRRv2B3sfPmrKZknR3eub5jqpbMvTdWD8lwVO3HS8cuPbAsZoHEyYTXWTSjWzp1RquQsnPFrta8Jnen2MWmDWL5gi4ENp8vR86m8DBtOhNs5qTowg33lmndb+ftgDQtg4SWZ+b2o2PTm11YzRZX3VZGq73x9PUUtD2/oY3MmTazXLFE4kMozIfAyOYL8WTVJbB+Hs0v+dWM6kI0Rs1FcBvJ9IRkfjOj6OyDbDijtSAJ1WWWg7V3uZ199PaMZTTsC+OH7j4dv0bLPP0+q4PQWGad8dRCNLSN9cV08LEFCO98L/w1bF+G8z6150G8ouR5cv871N1A4l2Kojh4CZzD9N/frMAPz7swDP3Jb75vd+2vAAMAIkNXL7uoiZEAAAAASUVORK5CYII=</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+                    <pre>
+<code class="json">
+{
+    "id": "65603604-fe19-479c-c885-3195b196fe8e",   
+    "to": "heisenberg@breakingbad.com/bedroom",
+    "type": "image/png",
+    "content": "iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAMAAAAd31JXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEYyQzgwNTUxQkY2MTFFMkE2NzBBRjFERkI1MEFCQjUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEYyQzgwNTYxQkY2MTFFMkE2NzBBRjFERkI1MEFCQjUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowRjJDODA1MzFCRjYxMUUyQTY3MEFGMURGQjUwQUJCNSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowRjJDODA1NDFCRjYxMUUyQTY3MEFGMURGQjUwQUJCNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnkDBYEAAADAUExURcbhnr/flKbTaZPJSrPZfprMVKzWdMzlqcXinpTKS9jsvt7vyKDPX7ncieLxz9Los5vMVtTqt/j788bin6/Wec/lruby1dvswtXouJDIRfH459Lns+v13eDvy+r02+7246zUc6LRY6nTbev13t3txuXy05TJS73cj5vNV7HYe6LPYrjbh7bZhJ7OXL/fk7naiZfLUKrUb6XRZ9vtw+nz2uPw0LPXfsnipM3mq9jqvcDdk8zkqbzcjvH46P///43GP1/s3CQAAALWSURBVHjajJXpmqowDIYtlB1kVQE3wH0ddfalJ/d/V6fQAtUZz5n8kMfyJv2aJqHz5/fW+b4UdKkF/2UDf7cGOHmeB/nRv3UQ2XQHp2z/0RtQiz8fskOS+z+z6SbZrt6fCLOFRWbz4cth7f/A+kbRGRPiYmRBZYpFyGzw4eWTW9Y/rcbEkkpIZywgXdJH0zgzJtfsY7J6Ihpj+AM0hQbXyDiqYcamxv6JuHU8WfRRzHFmpAKbZ1QARwBL7KHW8eND3rJv3pCQ+hVIjDXr/9DtJGHNBsbD1NQaVkaVh9awznNhBJw9egMqQHKlWkR9stqZ9JYhZ2lYiSVJblgFQWvWbF8GpuzjMuYpUFjo8kdAJcsksedX7LHoN1qxzji5WVEdLIM2izYVm+/bHICtUeUyqJUaGevIrtSRjlGx8EmEHWVs06SVkm0OljLIEBjbE1mqw0KOAoqO2yWFvEOXsl3KjhAyTVNDSDN1ZNKSxKoqusOi17AES6XxF5S14NrMTqWhZB1x3RkRotHjS2KGv7jeLyKsSrriuIsyDQrGTn04sufsS8sqLq1IVZHrw9oqKtOnkmhdseuiX2+numUVUEW4rQbV1fRRv2B3sfPmrKZknR3eub5jqpbMvTdWD8lwVO3HS8cuPbAsZoHEyYTXWTSjWzp1RquQsnPFrta8Jnen2MWmDWL5gi4ENp8vR86m8DBtOhNs5qTowg33lmndb+ftgDQtg4SWZ+b2o2PTm11YzRZX3VZGq73x9PUUtD2/oY3MmTazXLFE4kMozIfAyOYL8WTVJbB+Hs0v+dWM6kI0Rs1FcBvJ9IRkfjOj6OyDbDijtSAJ1WWWg7V3uZ199PaMZTTsC+OH7j4dv0bLPP0+q4PQWGad8dRCNLSN9cV08LEFCO98L/w1bF+G8z6150G8ouR5cv871N1A4l2Kojh4CZzD9N/frMAPz7swDP3Jb75vd+2vAAMAIkNXL7uoiZEAAAAASUVORK5CYII="
+}
 </code>
 </pre>
                     <h3 id="notification">Notification</h3>
                     <p>A notification transports information about events associated to a message sent in a session. Can be originated by a server or by the message destination node.</p>
                     <p>JSON Schema:</p>
-                    <pre><code class="json-schema"><span>
-<span class="json-punctuation">{</span>
-    <span class="json-keyword">"$schema"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">http://json-schema.org/draft-04/schema#</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"title"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">notification</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"from"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"to"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"pp"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"id"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"metadata"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"event"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"enum"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> 
-                <span class="json-punctuation">"</span><span class="json-string">accepted</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">validated</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">authorized</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">dispatched</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">received</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">consumed</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">failed</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"reason"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-                <span class="json-object-key">"code"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-                    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">integer</span><span class="json-punctuation">"</span>
-                <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-                <span class="json-object-key">"description"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-                    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span>
-                <span class="json-punctuation">}</span></span>
-            <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">code</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span>
-    <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">id</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> <span class="json-punctuation">"</span><span class="json-string">event</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"additionalProperties"</span><span class="json-punctuation">:</span><span> <span class="json-false">false</span></span>
-<span class="json-punctuation">}</span></span>
+                    <pre>
+<code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "notification",
+    "type": "object",
+    "properties": {
+        "from": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "to": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "pp": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "id" : {
+            "type": "string",
+            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+        },
+        "metadata": {
+            "type": "object"
+        },
+        "event" : {
+            "enum": [ 
+                "accepted",
+                "validated",
+                "authorized",
+                "dispatched",
+                "received",
+                "consumed",
+                "failed"
+            ]
+        },
+        "reason" : {
+            "type": "object",
+            "properties": {
+                "code" : {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [ "code" ]
+        }
+    },
+    "required": [ "id", "event" ],
+    "additionalProperties": false
+}
 </code>
 </pre>
                     <p>In a notification, the following constraints should apply to the envelope properties:</p>
@@ -353,98 +356,101 @@
                     </ul>
                     <p class="lead">Examples</p>
                     <p>Received notification sent by the destination node:</p>
-                    <pre><code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">48600604-ce09-479c-b985-1195b196fe8e</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">skyler@breakingbad.com/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"to"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">heisenberg@breakingbad.com/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"event"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">received</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+                    <pre>
+<code class="json">
+{
+    "id": "48600604-ce09-479c-b985-1195b196fe8e",
+    "from": "skyler@breakingbad.com/bedroom",
+    "to": "heisenberg@breakingbad.com/bedroom",
+    "event": "received"
+}
 </code>
 </pre>
                     <p>Failure notification sent by the server:</p>
-                    <pre><code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">9d0c4fea-75c7-432a-a164-c1a219bc17a8</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"to"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">skyler@breakingbad.com/bedroom</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"event"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">failed</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"reason"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"code"</span><span class="json-punctuation">:</span> <span class="json-number">42</span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"description"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">The message destination was not found</span><span class="json-punctuation">"</span>
-    <span class="json-punctuation">}</span>
-<span class="json-punctuation">}</span>
+                    <pre>
+<code class="json">
+{
+    "id": "9d0c4fea-75c7-432a-a164-c1a219bc17a8",
+    "to": "skyler@breakingbad.com/bedroom",
+    "event": "failed",
+    "reason": {
+        "code": 42,
+        "description": "The message destination was not found"
+    }
+}
 </code>
 </pre>
                     <h3 id="command">Command</h3>
                     <p>Allows the manipulation of node resources, like server session parameters or information related to the network nodes.</p>
                     <p>JSON Schema:</p>
-                    <pre><code class="json-schema"><span>
-<span class="json-punctuation">{</span>
-    <span class="json-keyword">"$schema"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">http://json-schema.org/draft-04/schema#</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"title"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">command</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"from"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"to"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"pp"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"id"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"metadata"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"method"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"enum"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> 
-                <span class="json-punctuation">"</span><span class="json-string">get</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">set</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">delete</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">observe</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"uri"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"title"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">limeUri</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^((lime://)(\w\.?-?)+@?(\w\.?-?@?)+)?(/(\w\.?-?@?)+)+(\?{1}((\w+=\w+)&amp;?)+)?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"type"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^[-\w]+/((json)|([-\w.]+(\+json)))$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"resource"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"status"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"enum"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span>
-                <span class="json-punctuation">"</span><span class="json-string">success</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">failure</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"reason"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-                <span class="json-object-key">"code"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-                    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">integer</span><span class="json-punctuation">"</span>
-                <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-                <span class="json-object-key">"description"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-                    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span>
-                <span class="json-punctuation">}</span></span>
-            <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">code</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span>
-    <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">id</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> <span class="json-punctuation">"</span><span class="json-string">method</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"additionalProperties"</span><span class="json-punctuation">:</span><span> <span class="json-false">false</span></span>
-<span class="json-punctuation">}</span></span>
+                    <pre>
+<code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "command",
+    "type": "object",
+    "properties": {
+        "from": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "to": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "pp": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})$"
+        },
+        "id" : {
+            "type": "string",
+            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+        },
+        "metadata": {
+            "type": "object"
+        },
+        "method" : {
+            "enum": [ 
+                "get",
+                "set",
+                "delete",
+                "observe"
+            ]
+        },
+        "uri" : {
+            "title": "limeUri",
+            "type": "string",
+            "pattern": "^((lime://)(\w\.?-?)+@@?(\w\.?-?@@?)+)?(/(\w\.?-?@@?)+)+(\?{1}((\w+=\w+)&?)+)?$"
+        },
+        "type" : {
+            "type": "string",
+            "pattern": "^[-\w]+/((json)|([-\w.]+(\+json)))$"
+        },
+        "resource" : {
+            "type": "object"
+        },
+        "status": {
+            "enum": [
+                "success",
+                "failure"
+            ]
+        },
+        "reason" : {
+            "type": "object",
+            "properties": {
+                "code" : {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [ "code" ]
+        }
+    },
+    "required": [ "id", "method" ],
+    "additionalProperties": false
+}
 </code>
 </pre>
                     <p>In a command, the following constraints should apply to the envelope properties:</p>
@@ -491,7 +497,7 @@
                             The URI may als contains a query string for filtering.
                         </li>
                         <li>
-                            <strong>type</strong> - MIME type of the resource. Like the messages, the protocol defines some <a href="resources.html">common resource types</a>, but may exists specific resources to the implementation. This property should be present always when the value of <em>resource</em> property is defined.
+                            <strong>type</strong> - MIME type of the resource. Like the messages, the protocol defines some <a href="@Url.Action("ResourceTypes")">common resource types</a>, but may exists specific resources to the implementation. This property should be present always when the value of <em>resource</em> property is defined.
                         </li>
                         <li>
                             <strong>resource</strong> - JSON representation of the resource. It must be present in commands with the methods <em>set</em> and <em>observe</em> and may be present in the method <em>delete</em>.
@@ -525,172 +531,176 @@
                     </ul>
                     <p class="lead">Examples</p>
                     <p>Setting the presence:</p>
-                    <pre>C:
+                    <pre>
+C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">9cbe5fe1-b6b2-4afe-ab12-0675aa139f36</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">jesse@breakingbad.com/home</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> 
-    <span class="json-object-key">"method"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">set</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"uri"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">/presence</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">application/vnd.lime.presence+json</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"resource"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"status"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">available</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"message"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">Yo 148, 3-to-the-3-to-the-6-to-the-9. Representin' the ABQ. What up, biatch?</span><span class="json-punctuation">"</span>
-    <span class="json-punctuation">}</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "9cbe5fe1-b6b2-4afe-ab12-0675aa139f36",
+    "from": "jesse@breakingbad.com/home", 
+    "method": "set",
+    "uri": "/presence",
+    "type": "application/vnd.lime.presence+json",
+    "resource": {
+        "status": "available",
+        "message": "Yo 148, 3-to-the-3-to-the-6-to-the-9. Representin' the ABQ. What up, biatch?"
+    }
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">9cbe5fe1-b6b2-4afe-ab12-0675aa139f36</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"method"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">set</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"status"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">success</span><span class="json-punctuation">"</span>    
-<span class="json-punctuation">}</span>
+{
+    "id": "9cbe5fe1-b6b2-4afe-ab12-0675aa139f36",
+    "from": "server@breakingbad.com",    
+    "method": "set",
+    "status": "success"    
+}
 </code>
 </pre>
                     <p>Getting the roster with a filter:</p>
-                    <pre>C:
+                    <pre>
+C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">b784a7d2-59d7-45de-a1eb-8c50a0f5edb8</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">jesse@breakingbad.com/home</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"method"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">get</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"uri"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">lime://jesse@breakingbad.com/contacts?sharePresence=true&amp;take=3</span><span class="json-punctuation">"</span>    
-<span class="json-punctuation">}</span>
+{
+    "id": "b784a7d2-59d7-45de-a1eb-8c50a0f5edb8",
+    "from": "jesse@breakingbad.com/home",    
+    "method": "get",
+    "uri": "lime://jesse@breakingbad.com/contacts?sharePresence=true&amp;take=3"    
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">b784a7d2-59d7-45de-a1eb-8c50a0f5edb8</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"method"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">get</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"status"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">success</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">application/vnd.lime.collection+json</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"resource"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"total"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">4</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"itemType"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">application/vnd.lime.contact+json</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"items"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span>
-            <span class="json-punctuation">{</span> 
-                <span class="json-object-key">"identity"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">skinnypete@breakingbad.com</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">}</span><span class="json-punctuation">,</span>
-            <span class="json-punctuation">{</span> 
-                <span class="json-object-key">"identity"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">badger@breakingbad.com</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">}</span><span class="json-punctuation">,</span>
-            <span class="json-punctuation">{</span> 
-                <span class="json-object-key">"identity"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">combo@breakingbad.com</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">}</span>
-        <span class="json-punctuation">]</span>
-    <span class="json-punctuation">}</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "b784a7d2-59d7-45de-a1eb-8c50a0f5edb8",
+    "from": "server@breakingbad.com",    
+    "method": "get",
+    "status": "success",
+    "type": "application/vnd.lime.collection+json",
+    "resource": {
+        "total": "4",
+        "itemType": "application/vnd.lime.contact+json",
+        "items": [
+            { 
+                "identity": "skinnypete@breakingbad.com"
+            },
+            { 
+                "identity": "badger@breakingbad.com"
+            },
+            { 
+                "identity": "combo@breakingbad.com"
+            }
+        ]
+    }
+}
 </code>
 </pre>
                     <p>Trying without success to get another user account information:</p>
-                    <pre>C:
+                    <pre>
+C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">5c95e87f-7f0c-4cc3-b55b-99056d9f288d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">gusfring@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"pp"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">saul@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"method"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">get</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"uri"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">lime://gusfring@breakingbad.com/account</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "5c95e87f-7f0c-4cc3-b55b-99056d9f288d",
+    "from": "gusfring@breakingbad.com",
+    "pp": "saul@breakingbad.com",
+    "method": "get",
+    "uri": "lime://gusfring@breakingbad.com/account"
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">5c95e87f-7f0c-4cc3-b55b-99056d9f288d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"method"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">get</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"status"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">failure</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"reason"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"code"</span><span class="json-punctuation">:</span> <span class="json-number">56</span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"description"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">The request account is not sharing information with current session identity</span><span class="json-punctuation">"</span>
-    <span class="json-punctuation">}</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "5c95e87f-7f0c-4cc3-b55b-99056d9f288d",
+    "from": "server@breakingbad.com",
+    "method": "get",
+    "status": "failure",
+    "reason": {
+        "code": 56,
+        "description": "The request account is not sharing information with current session identity"
+    }
+}
 </code>
 </pre>
                     <h3 id="session">Session</h3>
                     <p>Allows the configuration and establishment of the communication channel between nodes. Parameters like authentication, cryptography and compression are set through the session envelope.</p>
                     <p>JSON Schema:</p>
-                    <pre><code class="json-schema"><span>
-<span class="json-punctuation">{</span>
-    <span class="json-keyword">"$schema"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">http://json-schema.org/draft-04/schema#</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"title"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">session</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"from"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"to"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">^(?:([^\"&amp;'/:&lt;&gt;@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"id"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"pattern"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"metadata"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"state"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"enum"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> 
-                <span class="json-punctuation">"</span><span class="json-string">new</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">negotiating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">authenticating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">established</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">finishing</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">finished</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-                <span class="json-punctuation">"</span><span class="json-string">failed</span><span class="json-punctuation">"</span>
-            <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"encryptionOptions"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">array</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"minItems"</span><span class="json-punctuation">:</span> <span class="json-number">1</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"items"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span> <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span> <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"uniqueItems"</span><span class="json-punctuation">:</span> <span class="json-true">true</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"encryption"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"compressionOptions"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">array</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"minItems"</span><span class="json-punctuation">:</span> <span class="json-number">1</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"items"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span> <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span> <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"uniqueItems"</span><span class="json-punctuation">:</span> <span class="json-true">true</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"compression"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"schemeOptions"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">array</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"minItems"</span><span class="json-punctuation">:</span> <span class="json-number">1</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"items"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span> <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span> <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"uniqueItems"</span><span class="json-punctuation">:</span> <span class="json-true">true</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"scheme"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"authentication"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span>
-        <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-        <span class="json-object-key">"reason"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-            <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">object</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"properties"</span><span class="json-punctuation">:</span><span class="json-schema-map"> <span class="json-punctuation">{</span>
-                <span class="json-object-key">"code"</span> <span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-                    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">integer</span><span class="json-punctuation">"</span>
-                <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-                <span class="json-object-key">"description"</span><span class="json-punctuation">:</span><span> <span class="json-punctuation">{</span>
-                    <span class="json-keyword">"type"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">string</span><span class="json-punctuation">"</span>
-                <span class="json-punctuation">}</span></span>
-            <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-            <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">code</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span>
-        <span class="json-punctuation">}</span></span>
-    <span class="json-punctuation">}</span></span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"required"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">state</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span><span class="json-punctuation">,</span>
-    <span class="json-keyword">"additionalProperties"</span><span class="json-punctuation">:</span><span> <span class="json-false">false</span></span>
-<span class="json-punctuation">}</span></span>
+                    <pre>
+<code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "session",
+    "type": "object",
+    "properties": {
+        "from": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "to": {
+            "type": "string",
+            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
+        },
+        "id" : {
+            "type": "string",
+            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+        },
+        "metadata": {
+            "type": "object"
+        },
+        "state" : {
+            "enum": [ 
+                "new",
+                "negotiating",
+                "authenticating",
+                "established",
+                "finishing",
+                "finished",
+                "failed"
+            ]
+        },
+        "encryptionOptions": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "uniqueItems": true
+        },
+        "encryption": {
+            "type": "string"
+        },
+        "compressionOptions": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "uniqueItems": true
+        },
+        "compression": {
+            "type": "string"
+        },
+        "schemeOptions": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "uniqueItems": true
+        },
+        "scheme": {
+            "type": "string"
+        },
+        "authentication": {
+            "type": "object"
+        },
+        "reason" : {
+            "type": "object",
+            "properties": {
+                "code" : {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [ "code" ]
+        }
+    },
+    "required": [ "state" ],
+    "additionalProperties": false
+}
 </code>
 </pre>
                     <p>In a session, the following constraints should apply to the envelope properties:</p>
@@ -807,86 +817,87 @@ S:
                     </ul>
                     <p class="lead">Examples</p>
                     <p>Establishment and closing of a session with negotiation and authentication:</p>
-                    <pre>C:
+                    <pre>
+C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">new</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+{
+    "state": "new"
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com/server1</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">negotiating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"encryptionOptions"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">none</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> <span class="json-punctuation">"</span><span class="json-string">tls</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"compressionOptions"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">none</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> <span class="json-punctuation">"</span><span class="json-string">gzip</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "from": "server@breakingbad.com/server1",    
+    "state": "negotiating",
+    "encryptionOptions": [ "none", "tls" ],
+    "compressionOptions": [ "none", "gzip" ]
     
-<span class="json-punctuation">}</span>
+}
 </code>
 C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">negotiating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"encryption"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">tls</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"compression"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">none</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "state": "negotiating",    
+    "encryption": "tls",
+    "compression": "none"
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com/server1</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">negotiating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"encryption"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">tls</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"compression"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">none</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "from": "server@breakingbad.com/server1",    
+    "state": "negotiating",    
+    "encryption": "tls",
+    "compression": "none"
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com/server1</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">authenticating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>    
-    <span class="json-object-key">"schemeOptions"</span><span class="json-punctuation">:</span> <span class="json-punctuation">[</span> <span class="json-punctuation">"</span><span class="json-string">guest</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span> <span class="json-punctuation">"</span><span class="json-string">plain</span><span class="json-punctuation">"</span> <span class="json-punctuation">]</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "from": "server@breakingbad.com/server1",    
+    "state": "authenticating",    
+    "schemeOptions": [ "guest", "plain" ]
+}
 </code>
 C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">gale@breakingbad.com/lab</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">authenticating</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"scheme"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">plain</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"authentication"</span><span class="json-punctuation">:</span> <span class="json-punctuation">{</span>
-        <span class="json-object-key">"password"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">aWxvdmV1d3c=</span><span class="json-punctuation">"</span>
-    <span class="json-punctuation">}</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "from": "gale@breakingbad.com/lab",
+    "state": "authenticating",
+    "scheme": "plain",
+    "authentication": {
+        "password": "aWxvdmV1d3c="
+    }
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>   
-    <span class="json-object-key">"to"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">gale@breakingbad.com/lab</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>             
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">established</span><span class="json-punctuation">"</span>    
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "from": "server@breakingbad.com",   
+    "to": "gale@breakingbad.com/lab",             
+    "state": "established"    
+}
 </code>
 C:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">finishing</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "state": "finishing"
+}
 </code>
 S:
 <code class="json">
-<span class="json-punctuation">{</span>
-    <span class="json-object-key">"id"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">d35ad2be-9aa9-4825-9096-d6332655ed1d</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"from"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">server@breakingbad.com/server1</span><span class="json-punctuation">"</span><span class="json-punctuation">,</span>
-    <span class="json-object-key">"state"</span><span class="json-punctuation">:</span> <span class="json-punctuation">"</span><span class="json-string">finished</span><span class="json-punctuation">"</span>
-<span class="json-punctuation">}</span>
+{
+    "id": "d35ad2be-9aa9-4825-9096-d6332655ed1d",
+    "from": "server@breakingbad.com/server1",
+    "state": "finished"
+}
 </code>
 </pre>
                 </div>
