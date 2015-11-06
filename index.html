@@ -188,7 +188,7 @@
                             This property is used by the destination to handle the content in the appropriate way. 
                             The MIME can be any discrete type (text, application, image, video or audio; composite types, like message or multipart, are not supported). 
                             For structured data, is recommended to use JSON subtypes (like <em>application/json</em> or <em>application/vnd.specific+json</em>), althought is possible to send other types, like XML, provided that the unsupported characters in content are escaped, accordinally to the JSON specification.
-                            The protocol defines some <a href="@Url.Action("ContentTypes")">common types</a> that should be reused. 
+                            The protocol defines some <a href="content-types.html">common types</a> that should be reused. 
                             If you are using a custom content type, consider <a href="http://www.iana.org/cgi-bin/mediatypes.pl">registering it</a> with IANA in order to provide interoperability.
                         </li>
                         <li>
@@ -497,7 +497,7 @@
                             The URI may als contains a query string for filtering.
                         </li>
                         <li>
-                            <strong>type</strong> - MIME type of the resource. Like the messages, the protocol defines some <a href="@Url.Action("ResourceTypes")">common resource types</a>, but may exists specific resources to the implementation. This property should be present always when the value of <em>resource</em> property is defined.
+                            <strong>type</strong> - MIME type of the resource. Like the messages, the protocol defines some <a href="resources.html">common resource types</a>, but may exists specific resources to the implementation. This property should be present always when the value of <em>resource</em> property is defined.
                         </li>
                         <li>
                             <strong>resource</strong> - JSON representation of the resource. It must be present in commands with the methods <em>set</em> and <em>observe</em> and may be present in the method <em>delete</em>.
