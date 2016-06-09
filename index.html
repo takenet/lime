@@ -114,8 +114,7 @@
                             <strong>pp</strong> - Acronym for <em>per procurationem</em>. Identifier of a delegate node (a node that received a permission to send on behalf of another), in the <em>name@domain/instance</em> format. Allows a node to send an envelope on behalf of another identity. 
                         </li>
                         <li>
-                            <strong>id</strong> - Unique identifier of the envelope, in the <a href="http://www.ietf.org/rfc/rfc4122.txt">UUID</a> format. 
-                            The purpose of using a 128-bit identifier is minimize the risk of a collision, since the protocol allows interconnections between networks in different domains, each one with a large number of connected nodes.
+                            <strong>id</strong> - Identifier of the envelope, which can be any relevant value for the caller.
                         </li>
                         <li>
                             <strong>metadata</strong> - Allows the transport of generic information, in the "name": "value" format. This property is optional for all envelopes. Any value set in this property should not change the behavior of the server.
@@ -144,8 +143,7 @@
             "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
         },
         "id" : {
-            "type": "string",
-            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+            "type": "string"
         },
         "metadata": {
             "type": "object"
@@ -213,7 +211,7 @@
                     <pre>
 <code class="json">
 {
-    "id": "48600604-ce09-479c-b985-1195b196fe8e",
+    "id": "my-id",
     "from": "heisenberg@breakingbad.com/bedroom",
     "to": "skyler/bedroom",
     "type": "application/vnd.lime.threadedtext+json",
@@ -261,8 +259,7 @@
             "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
         },
         "id" : {
-            "type": "string",
-            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+            "type": "string"
         },
         "metadata": {
             "type": "object"
@@ -403,8 +400,7 @@
             "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})$"
         },
         "id" : {
-            "type": "string",
-            "pattern": "\b[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}\b"
+            "type": "string"
         },
         "metadata": {
             "type": "object"
