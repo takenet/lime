@@ -255,7 +255,7 @@
                 <hr />
 
                 <h2 id="media-link">Media link</h2>
-                <p>Represents an external link to a media content..</p>
+                <p>Represents an external link to a media content.</p>
                 <h4>MIME type</h4>
                 <pre>
                     application/vnd.lime.media-link+json
@@ -300,25 +300,26 @@
                 <h4>Properties</h4>
                 <ul>
                     <li>
-                        <strong>state</strong> - The current chat state. The possible values are:
-                        <ul>
-                            <li>
-                                <strong>starting</strong> - The other chat party started a new chat a conversation.
-                            </li>
-                            <li>
-                                <strong>composing</strong> - The other party is typing.
-                            </li>
-                            <li>
-                                <strong>paused</strong> - The other party was typing but stopped.
-                            </li>
-                            <li>
-                                <strong>deleting</strong> - The other party is deleting a text.
-                            </li>
-                            <li>
-                                <strong>gone</strong> - The other party left the conversation.
-                            </li>
-                        </ul>
+                        <strong>type</strong> - The media type of the linked media.
                     </li>
+                    <li>
+                        <strong>size</strong> - The media size, in bytes.
+                    </li>
+                    <li>
+                        <strong>uri</strong> - The link URI.
+                    </li>
+                    <li>
+                        <strong>previewUri</strong> - The link preview URI. It can be used to provide a preview of the media, like a thumbnail image.
+                    </li>
+                    <li>
+                        <strong>previewType</strong> - The type of the link preview.
+                    </li>
+                    <li>
+                        <strong>title</strong> - The link title text.
+                    </li>
+                    <li>
+                        <strong>text</strong> - The link description text.
+                    </li>                    
                 </ul>
                 <h4>Example</h4>
                 <pre>
