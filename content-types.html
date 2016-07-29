@@ -507,6 +507,69 @@
                 </pre>
                 <hr />
 
+                <h2 id="collection">Collection</h2>
+                <p>Represents a collection of documents.</p>
+                <h4>MIME type</h4>
+                <pre>
+                    application/vnd.lime.collection+json
+                </pre>
+                <h4>JSON Schema</h4>
+                <pre>
+                    <code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Collection",
+    "type": "object",
+    "properties": {
+        "itemType": {
+            "type": "string",
+            "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+        },
+        "total": {
+            "type": "integer"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }            
+        }
+    },
+    "required": [ "items", "itemType" ]
+}
+</code>
+                </pre>
+                <h4>Properties</h4>
+                <ul>
+                    <li>
+                        <strong>itemType</strong> - The media type of all items of the collection.
+                    </li>
+                    <li>
+                        <strong>total</strong> - The total of items in the collection. The count refers to the original source collection, without any applied filter that may be applied in the items on this collection.
+                    </li>
+                    <li>
+                        <strong>items</strong> - The collection items.
+                    </li>                    
+                </ul>
+                <h4>Example</h4>
+                <pre>
+                    <code class="json">
+{
+    "from": "ww@breakingbad.com",
+    "to": "jesse@breakingbad.com",
+    "type": "application/vnd.lime.collection+json",
+    "content": {
+        "itemType": "text/plain",
+        "items":[
+            "methylamine",
+            "acetic acid",
+            "phenyl acetic acid"
+        ]
+    }        
+}
+</code>
+                </pre>
+                <hr />
 
             </div>
 
@@ -527,7 +590,10 @@
                         </li>
                         <li>
                             <a href="#media-link">Media link</a>
-                        </li>                        
+                        </li>
+                        <li>
+                            <a href="#collection">Collection</a>
+                        </li>
                     </ul>
                 </div>
             </div>
