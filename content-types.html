@@ -254,6 +254,176 @@
                 </pre>
                 <hr />
 
+                <h2 id="select">Document select</h2>
+                <p>Aggregate a list of document options for selection.  This type is similar to the <a href="#select">select</a>, but allows generic documents to be defined in the select header and options, instead of plain text.</p>
+                <h4>MIME type</h4>
+                <pre>application/vnd.lime.document-select+json</pre>
+                <h4>JSON Schema</h4>
+                <pre>
+                    <code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Select",
+    "type": "object",
+    "properties": {
+        "scope": {
+            "enum": [
+                "transient",
+                "persistent",
+                "immediate"
+            ]
+        },
+        "header": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+                },
+                "value": {
+                    "type": "object"
+                },
+                "required": ["type","value"]
+            }        
+        },
+        "options": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "order": {
+                        "type": "integer"
+                    },
+                    "label": {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+                            },
+                            "value": {
+                                "type": "object"
+                            },
+                            "required": ["type","value"]
+                        } 
+                    },
+                    "value": {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+                            },
+                            "value": {
+                                "type": "object"
+                            },
+                            "required": ["type","value"]
+                        } 
+                    },
+                    "required": ["label"]
+                }
+            }
+        }
+    }
+    "required": [ "options" ]
+}
+</code>
+                </pre>
+                <h4>Properties</h4>
+                <ul>
+                    <li>
+                        <strong>scope</strong> - The scope which the select options is valid. This property hints to the
+                        destination of the select when the sender is able to receive and understand a select option reply.
+                        The possible values are:
+                        <ul>
+                            <li>
+                                <strong>transient</strong> - The select is transient and its valid during a temporary conversation
+                                scope. This is the default scope.
+                            </li>
+                            <li>
+                                <strong>persistent</strong> - The select is persistent and its valid in any time for the
+                                specific sender.
+                            </li>
+                            <li>
+                                <strong>immediate</strong> - The select is valid only valid for the current scope.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>header</strong> - The select header document.
+                    </li>
+                    <li>
+                        <strong>options</strong> - An array with the available select options. This property is mandatory.
+                        Each item in the array define the following properties:
+                        <ul>
+                            <li>
+                                <strong>order</strong> - The option order number.
+                            </li>
+                            <li>
+                                <strong>label</strong> - The option label document. This property is mandatory. It have the following properties:
+                                <ul>
+                                    <li>
+                                        <strong>type</strong> - The media type of the document.                                        
+                                    </li>
+                                    <li>
+                                        <strong>value</strong> - The actual document JSON.                                        
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>value</strong> - The option value to be returned to the caller. If not defined, no value should be returned.
+                                <ul>
+                                    <li>
+                                        <strong>type</strong> - The media type of the document.                                        
+                                    </li>
+                                    <li>
+                                        <strong>value</strong> - The actual document JSON.                                        
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Example</h4>
+                <pre>
+                    <code class="json">
+{
+    "from": "ww@breakingbad.com",
+    "to": "jesse@breakingbad.com/junkyard",
+    "type": "application/vnd.lime.select+json",
+    "content": {
+        "header": {
+            "type": "text/plain",
+            "value": "Do you wanna cook crystal meth?"
+        } 
+        "options": [
+            {
+                "order": 1,
+                "label": {
+                    "type": "text/plain",
+                    "value": "yes"
+                }
+            },
+            {
+                "order": 2,
+                "label": {
+                    "type": "text/plain",
+                    "value": "np"
+                },
+                "value": {
+                    "type": "application/x-action-call-phone+json",
+                    "value": {
+                        "phoneNumber": "911"
+                    }
+                }
+            }
+        ]
+    }        
+}
+</code>
+                </pre>
+                <hr />
+
                 <h2 id="media-link">Media link</h2>
                 <p>Represents an external link to a media content.</p>
                 <h4>MIME type</h4>
@@ -353,8 +523,11 @@
                             <a href="#select">Select</a>
                         </li>
                         <li>
-                            <a href="#media-link">Media link</a>
+                            <a href="#document-select">Document select</a>
                         </li>
+                        <li>
+                            <a href="#media-link">Media link</a>
+                        </li>                        
                     </ul>
                 </div>
             </div>
