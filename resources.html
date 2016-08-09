@@ -342,12 +342,7 @@ S:
                     <hr />
                     <h2 id="delegation">Delegation</h2>
                     <p>
-                        Represents a delegation to send envelopes on behalf of another identity of the same network. The delegation can be constrained to specific envelope types and/or destinations. It is associated to the issuer's session and can be revoked through a <em>delete</em> command.
-                    </p>
-                    <p>
-                        While it is possible to a node spontaneously issue a delegation to another identity, the process usually begins with a <em>get</em> command from the node that wants the permissions (called <em>delegate</em>) to the node that will delegate the permissions (called <em>issuer</em>).
-                        In this command, the delegate informs which permissions it wants (called <em>claims</em>), like the command resource types and message content types.
-                        If the issuer node agrees to give the requested permissions, it sends to the server a <em>set</em> command with the same claims that the delegate requested. If the command succeeds, the issuer send a result command with success status to the delegate. Otherwise, it sends an error with the details in the reason property.
+                        Represents a delegation to send envelopes on behalf of another identity of the same network. The delegation can be constrained to specific envelope types. It can be revoked through a <em>delete</em> command.
                     </p>
                     <p>
                         In some cases, the delegation is issued automatically by the server. For instance if a node adds an identity to his roster, a node with this identity can <em>get</em> the <em>presence</em> resource on his behalf in the server.
@@ -372,67 +367,102 @@ S:
             "type": "string",
             "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
         },
-        "destinations": {
+        "envelopeTypes": {
             "type": "array",
-            "items": { 
-                "type": "string",
-                "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
-            },
-        },
-        "commands": {
-            "type": "array",
-            "items": { 
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "pattern": "^[-\w]+/[-\w.]+(\+json)$"
-                    },
-                    "methods": {
-                        "enum": [
-                            "get",
-                            "set",
-                            "delete"
-                        ]
-                    }
-                }
+            "items": {                 
+                "enum": [ 
+                    "message",
+                    "notification",
+                    "command"
+                ]
             }
         },
         "messages": {
             "type": "array",
             "items": { 
-                "type": "string",
-                "pattern": ""
+                "type": "string"
             }
-        }        
+        },
+        "notifications": {
+            "type": "array",
+            "items": { 
+                "enum": [ 
+                    "received",
+                    "consumed",
+                    "failed"
+                ]
+            }
+        },
+        "commands": {
+            "type": "array",
+            "items": { 
+                "method" : {
+                    "enum": [ 
+                        "get",
+                        "set",
+                        "delete",
+                        "observe"
+                    ]
+                },
+                "uri" : {
+                    "title": "limeUri",
+                    "type": "string",
+                    "pattern": "^((lime://)(\w\.?-?)+@@?(\w\.?-?@@?)+)?(/(\w\.?-?@@?)+)+(\?{1}((\w+=\w+)&?)+)?$"
+                },
+                "status": {
+                    "enum": [
+                        "success",
+                        "failure"
+                    ]
+                }
+            }
+        },
+           
     },
-    "required" : [ "target", "destinations" ]
+    "required" : [ "target" ]
 }
 </code>
 </pre>
                     <h4>Properties</h4>
                     <ul>
                         <li>
-                            <strong>target</strong> - In a set command (delegation), is the identity to be delegated and in a get command (delegation request), the node where the delegation should be applied by the destination.
+                            <strong>target</strong> - The target node which will receive the delegation.
                         </li>
                         <li>
-                            <strong>destinations</strong> - Array of destinations that the delegated identity can originate envelopes on behalf.
-                            It can be to a domain ("@@domain"), to a identity ("name@domain") or to a node ("name@domain/instance").
+                            <strong>envelopeTypes</strong> - The envelope types for delegation. If none is specified, indicates that all envelope types should be delegated.
                         </li>
                         <li>
-                            <strong>commands</strong> - Command definitions for delegation. An issued command delegation is valid only to the resource types held by the server. Each item in the array define the following properties:
+                            <strong>messages</strong> - Message constraints for delegation. If not present, the delegation is given without any restriction for the message envelope type. Each item in the array define the following properties:
                             <ul>
                                 <li>
-                                    <strong>type</strong> - The MIME type of the resource for delegation.
-                                </li>
-                                <li>
-                                    <strong>methods</strong> - Methods allowed in the delegation of the resource.
+                                    <strong>type</strong> - The MIME type of the content type for delegation.
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <strong>messages</strong> - Message definitions for delegation. The array must contains the MIME content types of the messages for delegation.
+                            <strong>notifications</strong> - Notification constraints for delegation. If not present, the delegation is given without any restriction for the notification envelope type. Each item in the array define the following properties:
+                            <ul>
+                                <li>
+                                    <strong>event</strong> - The event type for delegation.
+                                </li>
+                            </ul>
                         </li>
+                        <li>
+                            <strong>commands</strong> - Command constraints for delegation. If not present, the delegation is given without any restriction for the command envelope type. Each item in the array define the following properties:
+                            <ul>
+                                <li>
+                                    <strong>method</strong> - The method for delegation. If not present, The delegation is given for any method in the specified URI.
+                                </li>
+                                <li>
+                                    <strong>uri</strong> - The resource URI fo delegation.
+                                </li>
+                                <li>
+                                    <strong>status</strong> - The comand status for delegation. If not present, The delegation is given for any status in the specified URI.
+                                </li>
+                            </ul>
+                        </li>
+
+
                     </ul>
                     <h4>Example</h4>
                     <pre>
