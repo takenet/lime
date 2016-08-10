@@ -410,6 +410,8 @@
                 "get",
                 "set",
                 "delete",
+                "subscribe",
+                "unsubscribe",
                 "observe"
             ]
         },
@@ -480,6 +482,12 @@
                                 </li>
                                 <li>
                                     <strong>delete</strong> - Deletes a value of the resource or the resource itself.
+                                </li>
+                                <li>
+                                    <strong>subscribe</strong> - Subscribes to the resource, allowing the originator to be notified when the value of the resource changes in the destination.
+                                </li>
+                                <li>
+                                    <strong>unsubscribe</strong> - Unsubscribes to the resource, signaling to the destination that the originator do not want to receive further notifications about the resource.
                                 </li>
                                 <li>
                                     <strong>observe</strong> - Notify the destination about a change in the resource value of the sender. Commands with this method are one-way and the destination should not send a response for it. Because of that, these commands may not have an <em>id</em>.
