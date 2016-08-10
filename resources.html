@@ -1285,92 +1285,7 @@ S:
 </code>
 </pre>
                     <hr />
-                    <h2 id="subscription">Subscription</h2>
-                    <p>
-                        Represents a resource subscription information, which allows to a node receive the updated value every time when a subscribed resource is changed in the target node.
-                        This is useful to receive updates of changes in other identities resources, like the presence, but is possible to subscribe to a remote resource owned by the caller, like a resource in a server. To be able to subscribe to another node resource, the subscriber must have a <em>get delegation</em> for the resource in the publisher node.
-                    </p>
-                    <h4>URI template</h4>
-                    <pre>
-    lime://{ownerIdentity}/subscriptions
-</pre>
-                    <h4>MIME type</h4>
-                    <pre>
-    application/vnd.lime.subscription+json
-</pre>
-                    <h4>JSON Schema</h4>
-                    <pre>
-<code class="json-schema">
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "subscription",
-    "type": "object",
-    "properties": {
-        "owner": {
-            "type": "string",
-            "pattern": "^(?:([^\"&'/:<>@@]{1,1023})@@)?([^/@@]{1,1023})(?:/(.{1,1023}))?$"
-        },
-        "type" : {
-            "type": "string",
-            "pattern": "^[-\w]+/[-\w.]+(\+json)$"
-        }
-    },
-    "required" : [ "type" ]
-}
-</code>
-</pre>
-                    <h4>Properties</h4>
-                    <ul>
-                        <li>
-                            <strong>owner</strong> - The identity of the owner of the resource. The default value is the identity of the <em>from</em> property of the envelope.
-                        </li>
-                        <li>
-                            <strong>type</strong> - The MIME type of the resource for subscription.
-                        </li>
-                    </ul>
-                    <h4>Example</h4>
-                    <p>Subscription to other node resource:</p>
-                    <pre>
-C:
-<code class="json">
-{
-    "id": "d728965a-5758-4169-8167-a94dd60bc826",
-    "from": "salamancacousins@breakingbad.com/mexico",
-    "method": "set",
-    "type": "application/vnd.lime.subscription+json",
-    "resource": {
-        "owner": "heisenberg@breakingbad.com",
-        "type": "application/vnd.lime.presence+json"
-    }
-}
-</code>
-S:
-<code class="json">
-{
-    "id": "d728965a-5758-4169-8167-a94dd60bc826",
-    "from": "server@breakingbad.com/machine1",
-    "to": "salamancacousins@breakingbad.com/mexico",
-    "method": "set",
-    "result": "success"
-}
-</code>
-</pre>
-                    <p>Receiving an update of the resource:</p>
-                    <pre>
-S:
-<code class="json">
-{
-    "from": "heisenberg@breakingbad.com",
-    "to": "salamancacousins@breakingbad.com/duke",
-    "pp": "server@breakingbad.com",
-    "method": "observe",
-    "type": "application/vnd.lime.presence+json",
-    "resource": {
-        "status": "available"
-    }
-}
-</code>
-</pre>
+                    
                 </div>
                 <div class="col-md-2" role="complementary">
                     <div id="sidebar" class="affix-top">
@@ -1404,9 +1319,6 @@ S:
                             </li>
                             <li>
                                 <a href="#contact">Contact</a>
-                            </li>
-                            <li>
-                                <a href="#subscription">Subscription</a>
                             </li>
                         </ul>
                     </div>
