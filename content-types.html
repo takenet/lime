@@ -507,6 +507,77 @@
                 </pre>
                 <hr />
 
+<h2 id="web-link">Web link</h2>
+                <p>Represents an external link to a website page.</p>
+                <h4>MIME type</h4>
+                <pre>
+                    application/vnd.lime.web-link+json
+                </pre>
+                <h4>JSON Schema</h4>
+                <pre>
+                    <code class="json-schema">
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "WebLink",
+    "type": "object",
+    "properties": {
+        "uri": {
+            "type": "string"            
+        },
+        "title": {
+            "type": "string",
+            "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+        },
+        "text": {
+            "type": "string"
+        },
+        "previewType": {
+            "type": "string",
+            "pattern": "^[-\w]+/[-\w.]+(\+\w+)?$"
+        },
+        "previewUri": {
+            "type": "string"            
+        },
+    },
+    "required": [ "uri" ]
+}
+</code>
+                </pre>
+                <h4>Properties</h4>
+                <ul>
+                    <li>
+                        <strong>uri</strong> - The link URI.
+                    </li>
+                    <li>
+                        <strong>previewUri</strong> - The link preview URI. It can be used to provide a preview of the web page, like a thumbnail image.
+                    </li>
+                    <li>
+                        <strong>previewType</strong> - The type of the link preview.
+                    </li>
+                    <li>
+                        <strong>title</strong> - The link title text.
+                    </li>
+                    <li>
+                        <strong>text</strong> - The link description text.
+                    </li>                    
+                </ul>
+                <h4>Example</h4>
+                <pre>
+                    <code class="json">
+{
+    "from": "jesse@breakingbad.com",
+    "to": "ww@breakingbad.com",
+    "type": "application/vnd.lime.web-link+json",
+    "content": {
+        "uri": "http://www.amc.com/shows/breaking-bad",
+        "title": "Breaking Bad",
+        "text": "The sun has set on Walter White's empire. See how it was built."
+    }        
+}
+</code>
+                </pre>
+                <hr />                
+
                 <h2 id="collection">Collection</h2>
                 <p>Represents a collection of documents.</p>
                 <h4>MIME type</h4>
@@ -590,6 +661,9 @@
                         </li>
                         <li>
                             <a href="#media-link">Media link</a>
+                        </li>
+                        <li>
+                            <a href="#web-link">Web link</a>
                         </li>
                         <li>
                             <a href="#collection">Collection</a>
