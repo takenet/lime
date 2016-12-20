@@ -66,7 +66,7 @@
                 "deleting",
                 "gone"
             ]
-        },        
+        }
     },
     "required": [ "state" ]
 }
@@ -680,6 +680,14 @@
         "previewUri": {
             "type": "string"            
         },
+        "target": {
+            "enum": [
+                "blank",
+                "self",
+                "selfCompact",
+                "selfTall"
+            ]
+        }        
     },
     "required": [ "uri" ]
 }
@@ -701,6 +709,23 @@
                     </li>
                     <li>
                         <strong>text</strong> - The link description text.
+                    </li>
+                    <li>
+                        <strong>target</strong> - The sets the target for showing the web link content.
+                        <ul>
+                            <li>
+                                <strong>blank</strong> - Indicates that the web link content should be displayed in a new container.
+                            </li>
+                            <li>
+                                <strong>self</strong> - Indicates that the web link content should be displayed in the current container.
+                            </li>
+                            <li>
+                                <strong>selfCompact</strong> - Indicates that the web link content should be displayed compacted in the current container.
+                            </li>
+                            <li>
+                                <strong>selfTall</strong> - Indicates that the web link content should be displayed tall in the current container.
+                            </li>
+                        </ul>
                     </li>                    
                 </ul>
                 <h4>Example</h4>
