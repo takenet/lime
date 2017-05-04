@@ -84,6 +84,9 @@
         "cellPhoneNumber": {
             "type": "string"
         },
+        "extras": {
+            "type": "object"
+        },        
         "isTemporary": {
             "type": "boolean"
         },
@@ -108,7 +111,7 @@
         },   
         "encryptMessageContent": {
             "type": "boolean"
-        }  
+        }
     }
 }
 </code>
@@ -136,6 +139,9 @@
                         <li>
                             <strong>cellPhoneNumber</strong> - The user cellphone number.
                         </li>
+                       <li>
+                            <strong>extras</strong> - A generic JSON property to store any key/value strings. 
+                        </li>                               
                         <li>
                             <strong>isTemporary</strong> - Indicates that the account is temporary is valid only in the current session. The default value is false.
                         </li>
@@ -160,6 +166,7 @@
                         <li>
                             <strong>encryptMessageContent</strong> - Indicates if the content of messages from this account should be encrypted in the server. 
                         </li>
+                  
                     </ul>
                     <h4>Example</h4>
                     <p>Setting the account information:</p>
@@ -1165,6 +1172,28 @@ S:
         "name": {
             "type": "string",
         },
+        "address": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        },
+        "phoneNumber": {
+            "type": "string"
+        },
+        "photoUri": {
+            "type": "string",
+            "format": "uri"
+        },
+        "cellPhoneNumber": {
+            "type": "string"
+        },
+        "extras": {
+            "type": "object"
+        },
         "isPending": {
             "type": "boolean"
         },
@@ -1173,7 +1202,7 @@ S:
         },
         "shareAccountInfo": {
             "type": "boolean"
-        }
+        }                
     },
     "required": [ "identity" ]
 }
@@ -1188,6 +1217,27 @@ S:
                         <li>
                             <strong>name</strong> - The name of the contact. This information is only visible by the roster owner.
                         </li>
+                        <li>
+                            <strong>address</strong> - The contact address.
+                        </li>
+                        <li>
+                            <strong>city</strong> - The contact city name.
+                        </li>
+                        <li>
+                            <strong>email</strong> - The contact e-mail address.
+                        </li>
+                        <li>
+                            <strong>phoneNumber</strong> - The contact phone number.
+                        </li>
+                        <li>
+                            <strong>photoUri</strong> - The contact photo URI.
+                        </li>
+                        <li>
+                            <strong>cellPhoneNumber</strong> - The contact cellphone number.
+                        </li>                        
+                       <li>
+                            <strong>extras</strong> - A generic JSON property to store any key/value strings. 
+                        </li>                               
                         <li>
                             <strong>isPending</strong> - Determines if the contact is pending for acceptance by the roster owner. The default value is <em>false</em>.
                         </li>
