@@ -1229,7 +1229,10 @@ S:
         },
         "shareAccountInfo": {
             "type": "boolean"
-        }                
+        },
+        "group": {
+            "type": "string"
+        }
     },
     "required": [ "identity" ]
 }
@@ -1282,6 +1285,9 @@ S:
                         </li>
                         <li>
                             <strong>shareAccountInfo</strong> - Indicates if the roster owner wants to share account information with the contact. If <em>true</em>, the server provides a <em>get</em> delegation permission to the contact identity into the roster owner <em>account</em> resource. The default value is <em>true</em>.
+                        </li>
+                        <li>
+                            <strong>group</strong> - Indicate the contact group name.
                         </li>
                     </ul>
                     <h4>Examples</h4>
