@@ -409,6 +409,7 @@
             "enum": [ 
                 "get",
                 "set",
+                "merge",
                 "delete",
                 "subscribe",
                 "unsubscribe",
@@ -479,6 +480,9 @@
                                 </li>
                                 <li>
                                     <strong>set</strong> - Sets or updates a for the resource.
+                                </li>
+                                <li>
+                                    <strong>merge</strong> - Merges the resource document with an existing one. If the resource doesn't exists, it is created.
                                 </li>
                                 <li>
                                     <strong>delete</strong> - Deletes a value of the resource or the resource itself.
