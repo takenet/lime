@@ -28,7 +28,6 @@
                             <li><a href="content-types.html">Content Types</a></li>
                             <li><a href="resources.html">Resources</a></li>
                             <li><a href="libraries.html">Libraries</a></li>
-                            <li><a href="loh.html">LIME over HTTP</a></li>
                             <li><a href="about.html">About</a></li>
                         </ul>
                     </div>
@@ -267,8 +266,6 @@
         "event" : {
             "enum": [ 
                 "accepted",
-                "validated",
-                "authorized",
                 "dispatched",
                 "received",
                 "consumed",
@@ -318,12 +315,6 @@
                             <ul>
                                 <li>
                                     <strong>accepted</strong> - The message was received and accepted by the server.
-                                </li>
-                                <li>
-                                    <strong>validated</strong> - The message format was validated by the server.
-                                </li>
-                                <li>
-                                    <strong>authorized</strong> - The dispatch of the message was authorized by the server.
                                 </li>
                                 <li>
                                     <strong>dispatched</strong> - The message was dispatched to the destination by the server.
