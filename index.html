@@ -493,7 +493,7 @@
                             <strong>uri</strong> - The uniform resource identifier (<a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a>). This property is mandatory in command requests and can be ommited in responses. It must be present in <em>observe</em> commands.
                             The supported scheme is <em>lime</em>, and the authority must be always the identity of the resource owner. In command requests, this identity is always the same of the identity of <em>from</em> envelope property.
                             Since the base URI is always the same for a specific identity (<em>lime://user@domain</em>), the URI can be represented as a fragment, like <em>/groups</em>, instead of <em>lime://user@domain/groups</em>.
-                            The URI may als contains a query string for filtering.
+                            The URI may also contains a query string for filtering.
                         </li>
                         <li>
                             <strong>type</strong> - MIME type of the resource. Like the messages, the protocol defines some <a href="resources.html">common resource types</a>, but may exists specific resources to the implementation. This property should be present always when the value of <em>resource</em> property is defined.
