@@ -6,24 +6,6 @@
 
 ---
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Concepts](#concepts)
-- [Node Identity](#node-identity)
-- [Envelope Types](#envelope-types)
-  - [Message](#message)
-  - [Notification](#notification)
-  - [Command](#command)
-  - [Session](#session)
-- [Content Types](#content-types)
-- [Resources](#resources)
-- [Libraries](#libraries)
-- [About](#about)
-- [License](#license)
-
----
-
 ## Introduction
 
 The LIME Protocol defines a simple, JSON-based messaging standard as an alternative to XMPP. While XMPP is powerful, its complexity can be excessive for many use cases. LIME covers only the basic messaging structure and uses MIME content-type declarations to remain extensible, without attempting to support the full breadth of scenarios that XMPP handles.
@@ -221,7 +203,7 @@ Available protocol implementations:
 
 ## About
 
-This specification is maintained by [Blip](https://www.blip.ai/) developers.
+This specification is maintained by [Blip](https://blip.ai/) developers.
 
 - 💬 Join the [discussion group](https://groups.google.com/forum/?hl=pt-BR#!forum/limeprotocol)
 - 🛠️ Contribute on [GitHub](https://github.com/takenet/lime/)
@@ -232,4 +214,4 @@ This specification is maintained by [Blip](https://www.blip.ai/) developers.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 
-**Lime Protocol Specification** by [Take](https://take.net) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+**Lime Protocol Specification** by [Blip](https://blip.ai/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
